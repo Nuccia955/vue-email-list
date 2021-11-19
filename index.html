@@ -10,11 +10,12 @@
 </head>
 <body>
     <section id="app">
-        <ul class="email-list">
+        <ul class="email-list" v-if="listCompleted">
             <li v-for="email in emailList" class="list-item">
                  {{ email }}
             </li>
         </ul>
+        <h2 v-else>Loading...</h2>
     </section>
 
     <!-- JS -->

@@ -8,6 +8,11 @@ const app = new Vue ({
     created() {
         this.genEmailList();
     },
+    computed: {
+        listCompleted() {
+            return (this.emailList.length === 10) ? true : false;
+        },
+    },
     methods: {
         genEmailList() {
             for(let i = 0; i < 10; i++) {
