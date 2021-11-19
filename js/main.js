@@ -7,16 +7,17 @@ const app = new Vue ({
         ]
     },
     created() {
-        this.genEmailList()
+        this.genEmailList();
     },
     methods: {
         genEmailList() {
             axios.get(this.APIurl)
-                .then(function (response) {
+                .then( response => {
                     // handle success
-                    console.log(response);
+                    console.log(response.data.response)
+                    this.email.push(response.data.response);
                 })
-                .catch(function (error) {
+                .catch( error => {
                     // handle error
                     console.log(error);
                 }
