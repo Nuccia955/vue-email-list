@@ -2,8 +2,7 @@ const app = new Vue ({
     el: '#app',
     data: {
         APIurl: 'https://flynn.boolean.careers/exercises/api/random/mail',
-        email: [
-            "test",
+        emailList: [
         ]
     },
     created() {
@@ -11,17 +10,20 @@ const app = new Vue ({
     },
     methods: {
         genEmailList() {
-            axios.get(this.APIurl)
-                .then( response => {
-                    // handle success
-                    console.log(response.data.response)
-                    this.email.push(response.data.response);
-                })
-                .catch( error => {
-                    // handle error
-                    console.log(error);
-                }
-            )
+            for(let i = 0; i < 10; i++) {
+                axios.get(this.APIurl)
+                    .then( response => {
+                        // handle success
+                        console.log(response.data.response);
+                        this.emailList.push(response.data.response);
+                        console.log(this.emailList)
+                    })
+                    .catch( error => {
+                        // handle error
+                        console.log(error);
+                    }
+                )
+            }
         }
     },
 })
