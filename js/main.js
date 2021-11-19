@@ -19,13 +19,11 @@ const app = new Vue ({
                 axios.get(this.APIurl)
                     .then( response => {
                         // handle success
-                        console.log(response.data.response);
                         this.emailList.push(response.data.response);
-                        console.log(this.emailList)
                     })
                     .catch( error => {
                         // handle error
-                        console.log(error);
+                        this.$refs.status.innerHTML = `${error}`;
                     }
                 )
             }

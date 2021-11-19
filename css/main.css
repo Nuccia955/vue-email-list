@@ -7,4 +7,31 @@
 
 body {
     font-family: sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(66, 107, 144);
+}
+
+/* UTILITIES */
+.container {
+    padding: 30px 50px;
+    background-color: aliceblue;
+}
+
+h1 {
+    margin-bottom: 30px;
+    color: rgb(103, 184, 255);
+}
+
+h4 {
+    text-align: center;
+    color: rgb(103, 184, 255);
+}
+
+li {
+    list-style: none;
+    padding: 10px 0;
+    color: rgb(20, 66, 106) ;
 }

@@ -9,13 +9,15 @@
     <title>Vue Email List</title>
 </head>
 <body>
-    <section id="app">
+    <!-- APP -->
+    <section id="app" class="container">
+        <h1>Random Email Address List</h1>
         <ul class="email-list" v-if="listCompleted">
-            <li v-for="email in emailList" class="list-item">
-                 {{ email }}
+            <li v-for="(email, index) in emailList" class="list-item">
+                Email address {{index + 1}}: {{ email }}
             </li>
         </ul>
-        <h2 v-else>Loading...</h2>
+        <h4 v-else ref="status">Loading...</h2>
     </section>
 
     <!-- JS -->
